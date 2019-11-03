@@ -1,0 +1,3 @@
+DISCORD_TOKEN='discordpytokenhere'
+SONARR_CHANNEL=''
+RADARR_CHANNEL=''
