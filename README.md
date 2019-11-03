@@ -1,0 +1,1 @@
+Simple discord bot for Sonarr/Radarr integration.
