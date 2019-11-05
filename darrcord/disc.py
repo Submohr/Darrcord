@@ -131,7 +131,6 @@ def request_radarr_movie(movie):
         return None
 
 
-
 def null_func(args):
     return {}
 
@@ -141,7 +140,7 @@ async def on_message(message):
     # we do not want the bot to look at its own messages
     if message.author == client.user:
         return
-
+    logger.debug(f"Received message: {message.content}")
     if str(message.channel) not in Config.SONARR_CHANNELS and str(message.channel) not in Config.RADARR_CHANNELS:
         return
 

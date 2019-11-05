@@ -1,8 +1,13 @@
 from darrcord.connection import Connection
+import logging
 
 
 class Config(object):
     DISCORD_TOKEN='discordtokenhere'
+
+    LOG_LEVEL = logging.INFO
+    LOG_FOLDER = 'logs'
+    LOG_NAME = 'darrcord.log'
 
     SONARR_ENABLED=True
     SONARR_CONNECTION = Connection('https://sonarr_api_uri_here_endswith/api/','sonarr_api_key_here')
@@ -13,6 +18,6 @@ class Config(object):
     RADARR_CONNECTION = Connection('https://radarr_api_uri_here_endswith/api/','radarr_api_key_here')
     RADARR_ROOT_FOLDER_PATH="radarr_root_folder_path"
 
-    SONARR_CHANNELS=["sonarr","requests"]
-    RADARR_CHANNELS=["radarr","requests"]
+    SONARR_CHANNELS=["sonarr","tv"]
+    RADARR_CHANNELS=["radarr","movies"]
 

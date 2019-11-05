@@ -42,14 +42,18 @@ def req(conn, resource, method="GET", params={}, body={}):
             # this sucks lol.  TODO.
             try:
                 if response.json()["error"]:
-                    logger.warning(f"Error message: {response.json()['error']}")
+                    logger.debug(f"Error message: {response.json()['error']}")
                     raise Exception
                 elif response.json()["message"]:
-                    logger.info(f"Message: {response.json()['message']}.  This may be an error; please investigate.")
+                    logger.debug(f"Message: {response.json()['message']}.  This may be an error; please investigate.")
             except KeyError:
                 pass
         else:
-            logger.info(f"Successfully connected to {conn.ENDPOINT + resource}!")
+            logger.debug(f"Successfully connected to {conn.ENDPOINT + resource}!")
+            try:
+                logger.debug(f"Message response code: {response.status_code}")
+            except:
+                pass
     return response
 
 
@@ -60,8 +64,8 @@ def req_command(conn):
 
 def req_item_lookup(conn, URI, params):
     resp = req(conn, URI,params=params)
-    logger.info(f"req_item_lookup: resp = {resp}")
-    if resp:
+    logger.debug(f"req_item_lookup: resp = {resp}")
+    if resp is not None:
         if isinstance(resp.json(),dict):
             json = [resp.json()]
         elif isinstance(resp.json(),list):
