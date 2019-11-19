@@ -6,6 +6,7 @@ chardet==3.0.4
 discord.py==1.2.4
 idna==2.8
 multidict==4.5.2
+python-dotenv==0.10.3
 requests==2.22.0
 urllib3==1.25.6
 websockets==6.0
