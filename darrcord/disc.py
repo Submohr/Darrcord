@@ -44,7 +44,7 @@ def parse_message(message):
 def parse_sonarr(message):
     ret = None
     try:
-        command = message.content[0]
+        command = message.content[0].lower()
         func = sonarr_switch(command)
         ret = func(message.content[1:].strip())
     except:
@@ -89,7 +89,7 @@ def request_sonarr_series(series):
 def parse_radarr(message):
     ret = None
     try:
-        command = message.content[0]
+        command = message.content[0].lower()
         func = radarr_switch(command)
         ret = func(message.content[1:].strip())
     except:
