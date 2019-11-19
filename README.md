@@ -2,8 +2,8 @@ Simple discord bot for Sonarr/Radarr integration.
 
 #### Setup:
 
-Create a config.py file with the structure of config-sample.py, and replace the strings with relevant
-information.  
+Config.py is looking for env variables to define things for the program.  Set them up in a .env file in the base
+directory, or establish them in the environment before starting the program.
 
 To get your discord token:  https://github.com/reactiflux/discord-irc/wiki/Creating-a-discord-bot-&-getting-a-token 
 
