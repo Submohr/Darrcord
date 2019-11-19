@@ -21,7 +21,11 @@ def req_series_request(id):
     try:
         lookup=look["json"][0]
     except IndexError:
-        return {"code":600, "json":[{"errorMessage":f"Could not find series with id {id}"}]}
+        return {"code":600, "json":[{"message":f"Could not find series with id {id}"}]}
+
+    if look['code']>=400:
+        return look
+
     body = {'title': lookup['title'], 'tvdbId': id, 'profileId': 1, 'titleSlug': lookup['titleSlug'],
             'images': lookup['images'], 'seasons': lookup['seasons'], 'seasonFolder': True,
             'addOptions': {"ignoreEpisodesWithFiles": False,

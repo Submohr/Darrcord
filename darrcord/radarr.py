@@ -8,7 +8,6 @@ conn = Config.RADARR_CONNECTION
 def req_movie_lookup(name=None,tmdbId=0,imdbIdStr=None,imdbId=0):
     if name is None and tmdbId==0 and imdbIdStr is None and imdbId == 0:
         return
-    logger.info("did we make it")
     URI = "movie/lookup"
     if name:
         params = {"term":name}
@@ -33,7 +32,11 @@ def req_movie_request(tmdbId):
     try:
         lookup=look["json"][0]
     except IndexError:
-        return {"code":600, "json":[{"errorMessage":f"Could not find movie with id {tmdbId}"}]}
+        return {"code":600, "json":[{"message":f"Could not find movie with id {tmdbId}"}]}
+
+    if look['code']>=400:
+        return look
+
     body = {'title': lookup['title'], 'tmdbId': tmdbId, 'qualityProfileId': 1, 'titleSlug': lookup['titleSlug'],
             'images': lookup['images'], 'year': lookup['year'], "rootFolderPath": Config.RADARR_ROOT_FOLDER_PATH,
             "monitored":True, 'addOptions': {"searchForMovie": True}}
