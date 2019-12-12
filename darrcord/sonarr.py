@@ -34,6 +34,7 @@ def req_series_request(id):
                            }}
 
     if 'Anime' in lookup['genres']:
+        body['seriesType'] = "anime"
         body['rootFolderPath'] = Config.SONARR_ROOT_ANIME_PATH
     else:
         body['rootFolderPath'] = Config.SONARR_ROOT_FOLDER_PATH
