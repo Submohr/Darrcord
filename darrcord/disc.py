@@ -4,7 +4,6 @@ from darrcord import sonarr
 from darrcord import radarr
 from darrcord import logger
 
-
 client = discord.Client()
 
 
@@ -23,7 +22,7 @@ def parse_message(message):
 
     if son_ret:
         ret_obj["sonarr"] = True
-        ret_obj["sonarr_obj"]=son_ret
+        ret_obj["sonarr_obj"] = son_ret
     else:
         ret_obj["sonarr"] = False
 
@@ -34,9 +33,9 @@ def parse_message(message):
 
     if rad_ret:
         ret_obj["radarr"] = True
-        ret_obj["radarr_obj"]=rad_ret
+        ret_obj["radarr_obj"] = rad_ret
     else:
-        ret_obj["radarr"]=False
+        ret_obj["radarr"] = False
 
     return ret_obj
 
@@ -44,19 +43,23 @@ def parse_message(message):
 def parse_sonarr(message):
     ret = None
     try:
-        command = message.content[0].lower()
+        # commenting this out until we have more than one command.
+        # command = message.content[0].lower()
+        command = 'r'
         func = sonarr_switch(command)
-        ret = func(message.content[1:].strip())
+        # commenting this out until we have more than one command.
+        # ret = func(message.content[1:].strip())
+        ret = func(message.content.strip())
     except:
         return None
     return ret
 
 
 def sonarr_switch(command):
-    switch={
-        'r':request_sonarr_series
+    switch = {
+        'r': request_sonarr_series
     }
-    ret = switch.get(command,null_func)
+    ret = switch.get(command, null_func)
     return ret
 
 
@@ -66,17 +69,18 @@ def request_sonarr_series(series):
         son_resp = sonarr.req_series_request(id)
         code = son_resp["code"]
         resp = son_resp["json"]
-        if code>=200 and code < 400:
+        if code >= 200 and code < 400:
             if resp:
-                ret = {'message': f"Successfully requested {resp[0]['title']}: https://www.thetvdb.com/?tab=series&id={id}",
-                   'resp': resp}
+                ret = {
+                    'message': f"Successfully requested {resp[0]['title']}: https://www.thetvdb.com/?tab=series&id={id}",
+                    'resp': resp}
             else:
-                ret = {'message':"Unknown error.  No error message.  Sorry."}
+                ret = {'message': "Unknown error.  No error message.  Sorry."}
         else:
             if resp:
-                ret = {'message': f"Error adding series.  Error message is: {resp[0]['message']}.", 'resp':resp}
+                ret = {'message': f"Error adding series.  Error message is: {resp[0]['message']}.", 'resp': resp}
             else:
-                ret = {'message':"Unknown error.  No error message.  Sorry."}
+                ret = {'message': "Unknown error.  No error message.  Sorry."}
         return ret
     except ValueError as err:
         logger.error(err)
@@ -98,10 +102,10 @@ def parse_radarr(message):
 
 
 def radarr_switch(command):
-    switch={
-        'r':request_radarr_movie
+    switch = {
+        'r': request_radarr_movie
     }
-    ret = switch.get(command,null_func)
+    ret = switch.get(command, null_func)
     return ret
 
 
@@ -111,17 +115,17 @@ def request_radarr_movie(movie):
         son_resp = radarr.req_movie_request(id)
         code = son_resp["code"]
         resp = son_resp["json"]
-        if code>=200 and code < 400:
+        if code >= 200 and code < 400:
             if resp:
                 ret = {'message': f"Successfully requested {resp[0]['title']}: https://www.themoviedb.org/movie/{id}",
-                   'resp': resp}
+                       'resp': resp}
             else:
-                ret = {'message':"Unknown error.  No error message.  Sorry."}
+                ret = {'message': "Unknown error.  No error message.  Sorry."}
         else:
             if resp:
-                ret = {'message': f"Error adding movie.  Error message is: {resp[0]['message']}.", 'resp':resp}
+                ret = {'message': f"Error adding movie.  Error message is: {resp[0]['message']}.", 'resp': resp}
             else:
-                ret = {'message':"Unknown error.  No error message.  Sorry."}
+                ret = {'message': "Unknown error.  No error message.  Sorry."}
         return ret
     except ValueError as err:
         logger.error(err)
@@ -148,16 +152,17 @@ async def on_message(message):
 
     message_data = parse_message(message)
     if not message_data["sonarr"] and not message_data["radarr"]:
-        if (Config.SONARR_ENABLED and str(message.channel) in Config.SONARR_CHANNELS) or (Config.RADARR_ENABLED and str(message.channel) in  Config.RADARR_CHANNELS):
-            msg=f"Sorry, {message.author.mention}, I didn't understand that request."
+        if (Config.SONARR_ENABLED and str(message.channel) in Config.SONARR_CHANNELS) or (
+                Config.RADARR_ENABLED and str(message.channel) in Config.RADARR_CHANNELS):
+            msg = f"Sorry, {message.author.mention}, I didn't understand that request."
         else:
             return
     if message_data["sonarr"]:
-        msg=f"{message.author.mention}: {message_data['sonarr_obj']['message']}"
+        msg = f"{message.author.mention}: {message_data['sonarr_obj']['message']}"
         await message.channel.send(msg)
         msg = None
     if message_data["radarr"]:
-        msg=f"{message.author.mention}: {message_data['radarr_obj']['message']}"
+        msg = f"{message.author.mention}: {message_data['radarr_obj']['message']}"
         await message.channel.send(msg)
         msg = None
 

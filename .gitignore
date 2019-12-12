@@ -2,5 +2,4 @@
 /.flaskenv
 /.idea/
 /logs/
-/logs/
 /.env
