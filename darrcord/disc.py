@@ -93,9 +93,13 @@ def request_sonarr_series(series):
 def parse_radarr(message):
     ret = None
     try:
-        command = message.content[0].lower()
+        #commenting until we have more commands
+        #command = message.content[0].lower()
+        command = 'r'
         func = radarr_switch(command)
-        ret = func(message.content[1:].strip())
+        #commenting until we have more commands
+        #ret = func(message.content[1:].strip())
+        ret = func(message.content.strip())
     except:
         return None
     return ret
