@@ -22,3 +22,5 @@ Similarly for movies:  it uses the tmdb ID of a show.  To find it, go to https:/
 `503919`
 
 in a channel defined by RADARR_CHANNELS in the config.
+
+#### More coming soon.
