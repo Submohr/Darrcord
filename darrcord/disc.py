@@ -78,7 +78,7 @@ def request_sonarr_series(series):
                 ret = {'message': "Unknown error.  No error message.  Sorry."}
         else:
             if resp:
-                ret = {'message': f"Error adding series.  Error message is: {resp[0]['message']}.", 'resp': resp}
+                ret = {'message': f"Error adding series.  Error message is: {resp[0]['errorMessage']}.", 'resp': resp}
             else:
                 ret = {'message': "Unknown error.  No error message.  Sorry."}
         return ret
@@ -127,7 +127,7 @@ def request_radarr_movie(movie):
                 ret = {'message': "Unknown error.  No error message.  Sorry."}
         else:
             if resp:
-                ret = {'message': f"Error adding movie.  Error message is: {resp[0]['message']}.", 'resp': resp}
+                ret = {'message': f"Error adding movie.  Error message is: {resp[0]['errorMessage']}.", 'resp': resp}
             else:
                 ret = {'message': "Unknown error.  No error message.  Sorry."}
         return ret
