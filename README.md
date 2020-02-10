@@ -9,18 +9,20 @@ To get your discord token:  https://github.com/reactiflux/discord-irc/wiki/Creat
 
 #### Commands:
 
-Only implemented command so far is request - just type "{id}".
+##### Search
+
+The default command is search. Any text the bot receives that isn't routed to another command is treated as a search string. The bot will reply with search results. Each result can be requested by reacting to the message with the corresponding number emoji.
+
+##### Request
 
 This works for both TV shows and movies.  For TV shows, it's the tvdb ID of a show - to find it, go to https://www.thetvdb.com/ and search for your show.  (For example: https://www.thetvdb.com/series/lost ).  On this page you'll find "The TVDB.com Series ID" with a value of 73739.  To request, Lost, you'll type:
 
-`73739`
-
-in a channel defined by SONARR_CHANNELS in the config.
+`tvdb:73739`
 
 Similarly for movies:  it uses the tmdb ID of a show.  To find it, go to https://www.themoviedb.org/ and  search for your movie.  (For example: https://www.themoviedb.org/movie/503919-the-lighthouse ).  In the URL of the movie, you'll see a number - in this case, 503919.  This is the tmdb ID.  To request The Lighthouse, you'll type:
 
-`503919`
+`tmdb:503919`
 
-in a channel defined by RADARR_CHANNELS in the config.
+If the channel is set in SONARR_CHANNELS or RADARR_CHANNELS in the config, the `tvdb:` and `tmdb:` prefixes can be omitted.
 
 #### More coming soon.
