@@ -1,0 +1,70 @@
+[
+{
+  "title": "Star Trek: Picard",
+  "alternateTitles": [],
+  "sortTitle": "star trek picard",
+  "seasonCount": 1,
+  "totalEpisodeCount": 0,
+  "episodeCount": 0,
+  "episodeFileCount": 0,
+  "sizeOnDisk": 0,
+  "status": "continuing",
+  "overview": "Jean-Luc Picard, former captain of the starship U.S.S. Enterprise, is pulled out of forced retirement and the next chapter of his life, to help a young woman who is pursued by assassins.",
+  "network": "CBS All Access",
+  "airTime": "03:00",
+  "images": [
+    {
+      "coverType": "fanart",
+      "url": "/sonarr/MediaCover/350/fanart.jpg"
+    },
+    {
+      "coverType": "banner",
+      "url": "/sonarr/MediaCover/350/banner.jpg"
+    },
+    {
+      "coverType": "poster",
+      "url": "/sonarr/MediaCover/350/poster.jpg"
+    }
+  ],
+  "seasons": [
+    {
+      "seasonNumber": 1,
+      "monitored": true
+    }
+  ],
+  "year": 2020,
+  "path": "/srv/anon/tv/library/Star Trek - Picard",
+  "profileId": 1,
+  "languageProfileId": 1,
+  "seasonFolder": true,
+  "monitored": true,
+  "useSceneNumbering": false,
+  "runtime": 45,
+  "tvdbId": 364093,
+  "tvRageId": 0,
+  "tvMazeId": 42193,
+  "firstAired": "2020-01-23T08:00:00Z",
+  "seriesType": "standard",
+  "cleanTitle": "startrekpicard",
+  "imdbId": "tt8806524",
+  "titleSlug": "star-trek-picard",
+  "certification": "TV-14",
+  "genres": [
+    "Science Fiction"
+  ],
+  "tags": [],
+  "added": "2020-02-10T06:02:19.89655Z",
+  "addOptions": {
+    "searchForMissingEpisodes": true,
+    "ignoreEpisodesWithFiles": false,
+    "ignoreEpisodesWithoutFiles": false,
+    "monitor": "unknown"
+  },
+  "ratings": {
+    "votes": 0,
+    "value": 0.0
+  },
+  "qualityProfileId": 1,
+  "id": 350
+}
+]

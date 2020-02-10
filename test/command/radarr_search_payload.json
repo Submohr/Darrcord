@@ -1,0 +1,742 @@
+[
+  {
+    "title": "Star Wars",
+    "alternativeTitles": [],
+    "secondaryYearSourceId": 0,
+    "sortTitle": "star wars",
+    "sizeOnDisk": 0,
+    "status": "released",
+    "overview": "Princess Leia is captured and held hostage by the evil Imperial forces in their effort to take over the galactic Empire. Venturesome Luke Skywalker and dashing captain Han Solo team together with the loveable robot duo R2-D2 and C-3PO to rescue the beautiful princess and restore peace and justice in the Empire.",
+    "inCinemas": "1977-05-25T00:00:00Z",
+    "images": [
+      {
+        "coverType": "poster",
+        "url": "http://image.tmdb.org/t/p/original/btTdmkgIvOi0FFip1sPuZI2oQG6.jpg"
+      }
+    ],
+    "downloaded": false,
+    "remotePoster": "http://image.tmdb.org/t/p/original/btTdmkgIvOi0FFip1sPuZI2oQG6.jpg",
+    "year": 1977,
+    "hasFile": false,
+    "profileId": 0,
+    "pathState": "dynamic",
+    "monitored": false,
+    "minimumAvailability": "tba",
+    "isAvailable": true,
+    "folderName": "",
+    "runtime": 0,
+    "tmdbId": 11,
+    "titleSlug": "star-wars-11",
+    "genres": [],
+    "tags": [],
+    "added": "0001-01-01T00:00:00Z",
+    "ratings": {
+      "votes": 12856,
+      "value": 8.2
+    },
+    "qualityProfileId": 0
+  },
+  {
+    "title": "Star Wars: The Rise of Skywalker",
+    "alternativeTitles": [],
+    "secondaryYearSourceId": 0,
+    "sortTitle": "star wars rise skywalker",
+    "sizeOnDisk": 0,
+    "status": "inCinemas",
+    "overview": "The surviving Resistance faces the First Order once again as the journey of Rey, Finn and Poe Dameron continues. With the power and knowledge of generations behind them, the final battle begins.",
+    "inCinemas": "2019-12-18T00:00:00Z",
+    "images": [
+      {
+        "coverType": "poster",
+        "url": "http://image.tmdb.org/t/p/original/db32LaOibwEliAmSL2jjDF6oDdj.jpg"
+      }
+    ],
+    "downloaded": false,
+    "remotePoster": "http://image.tmdb.org/t/p/original/db32LaOibwEliAmSL2jjDF6oDdj.jpg",
+    "year": 2019,
+    "hasFile": false,
+    "profileId": 0,
+    "pathState": "dynamic",
+    "monitored": false,
+    "minimumAvailability": "tba",
+    "isAvailable": true,
+    "folderName": "",
+    "runtime": 0,
+    "tmdbId": 181812,
+    "titleSlug": "star-wars-the-rise-of-skywalker-181812",
+    "genres": [],
+    "tags": [],
+    "added": "0001-01-01T00:00:00Z",
+    "ratings": {
+      "votes": 2873,
+      "value": 6.5
+    },
+    "qualityProfileId": 0
+  },
+  {
+    "title": "Star Wars: The Force Awakens",
+    "alternativeTitles": [],
+    "secondaryYearSourceId": 0,
+    "sortTitle": "star wars force awakens",
+    "sizeOnDisk": 0,
+    "status": "released",
+    "overview": "Thirty years after defeating the Galactic Empire, Han Solo and his allies face a new threat from the evil Kylo Ren and his army of Stormtroopers.",
+    "inCinemas": "2015-12-15T00:00:00Z",
+    "images": [
+      {
+        "coverType": "poster",
+        "url": "http://image.tmdb.org/t/p/original/weUSwMdQIa3NaXVzwUoIIcAi85d.jpg"
+      }
+    ],
+    "downloaded": false,
+    "remotePoster": "http://image.tmdb.org/t/p/original/weUSwMdQIa3NaXVzwUoIIcAi85d.jpg",
+    "year": 2015,
+    "hasFile": false,
+    "profileId": 0,
+    "pathState": "dynamic",
+    "monitored": false,
+    "minimumAvailability": "tba",
+    "isAvailable": true,
+    "folderName": "",
+    "runtime": 0,
+    "tmdbId": 140607,
+    "titleSlug": "star-wars-the-force-awakens-140607",
+    "genres": [],
+    "tags": [],
+    "added": "0001-01-01T00:00:00Z",
+    "ratings": {
+      "votes": 13762,
+      "value": 7.4
+    },
+    "qualityProfileId": 0
+  },
+  {
+    "title": "Solo: A Star Wars Story",
+    "alternativeTitles": [],
+    "secondaryYearSourceId": 0,
+    "sortTitle": "solo star wars story",
+    "sizeOnDisk": 0,
+    "status": "released",
+    "overview": "Through a series of daring escapades deep within a dark and dangerous criminal underworld, Han Solo meets his mighty future copilot Chewbacca and encounters the notorious gambler Lando Calrissian.",
+    "inCinemas": "2018-05-15T00:00:00Z",
+    "images": [
+      {
+        "coverType": "poster",
+        "url": "http://image.tmdb.org/t/p/original/4oD6VEccFkorEBTEDXtpLAaz0Rl.jpg"
+      }
+    ],
+    "downloaded": false,
+    "remotePoster": "http://image.tmdb.org/t/p/original/4oD6VEccFkorEBTEDXtpLAaz0Rl.jpg",
+    "year": 2018,
+    "hasFile": false,
+    "profileId": 0,
+    "pathState": "dynamic",
+    "monitored": false,
+    "minimumAvailability": "tba",
+    "isAvailable": true,
+    "folderName": "",
+    "runtime": 0,
+    "tmdbId": 348350,
+    "titleSlug": "solo-a-star-wars-story-348350",
+    "genres": [],
+    "tags": [],
+    "added": "0001-01-01T00:00:00Z",
+    "ratings": {
+      "votes": 4818,
+      "value": 6.6
+    },
+    "qualityProfileId": 0
+  },
+  {
+    "title": "Star Wars: The Last Jedi",
+    "alternativeTitles": [],
+    "secondaryYearSourceId": 0,
+    "sortTitle": "star wars last jedi",
+    "sizeOnDisk": 0,
+    "status": "released",
+    "overview": "Rey develops her newly discovered abilities with the guidance of Luke Skywalker, who is unsettled by the strength of her powers. Meanwhile, the Resistance prepares to do battle with the First Order.",
+    "inCinemas": "2017-12-13T00:00:00Z",
+    "images": [
+      {
+        "coverType": "poster",
+        "url": "http://image.tmdb.org/t/p/original/kOVEVeg59E0wsnXmF9nrh6OmWII.jpg"
+      }
+    ],
+    "downloaded": false,
+    "remotePoster": "http://image.tmdb.org/t/p/original/kOVEVeg59E0wsnXmF9nrh6OmWII.jpg",
+    "year": 2017,
+    "hasFile": false,
+    "profileId": 0,
+    "pathState": "dynamic",
+    "monitored": false,
+    "minimumAvailability": "tba",
+    "isAvailable": true,
+    "folderName": "",
+    "runtime": 0,
+    "tmdbId": 181808,
+    "titleSlug": "star-wars-the-last-jedi-181808",
+    "genres": [],
+    "tags": [],
+    "added": "0001-01-01T00:00:00Z",
+    "ratings": {
+      "votes": 9820,
+      "value": 7.0
+    },
+    "qualityProfileId": 0
+  },
+  {
+    "title": "Rogue One: A Star Wars Story",
+    "alternativeTitles": [],
+    "secondaryYearSourceId": 0,
+    "sortTitle": "rogue one star wars story",
+    "sizeOnDisk": 0,
+    "status": "released",
+    "overview": "A rogue band of resistance fighters unite for a mission to steal the Death Star plans and bring a new hope to the galaxy.",
+    "inCinemas": "2016-12-14T00:00:00Z",
+    "images": [
+      {
+        "coverType": "poster",
+        "url": "http://image.tmdb.org/t/p/original/qjiskwlV1qQzRCjpV0cL9pEMF9a.jpg"
+      }
+    ],
+    "downloaded": false,
+    "remotePoster": "http://image.tmdb.org/t/p/original/qjiskwlV1qQzRCjpV0cL9pEMF9a.jpg",
+    "year": 2016,
+    "hasFile": false,
+    "profileId": 0,
+    "pathState": "dynamic",
+    "monitored": false,
+    "minimumAvailability": "tba",
+    "isAvailable": true,
+    "folderName": "",
+    "runtime": 0,
+    "tmdbId": 330459,
+    "titleSlug": "rogue-one-a-star-wars-story-330459",
+    "genres": [],
+    "tags": [],
+    "added": "0001-01-01T00:00:00Z",
+    "ratings": {
+      "votes": 10314,
+      "value": 7.5
+    },
+    "qualityProfileId": 0
+  },
+  {
+    "title": "Star Wars: Episode I - The Phantom Menace",
+    "alternativeTitles": [],
+    "secondaryYearSourceId": 0,
+    "sortTitle": "star wars episode i phantom menace",
+    "sizeOnDisk": 0,
+    "status": "released",
+    "overview": "Anakin Skywalker, a young slave strong with the Force, is discovered on Tatooine. Meanwhile, the evil Sith have returned, enacting their plot for revenge against the Jedi.",
+    "inCinemas": "1999-05-19T00:00:00Z",
+    "images": [
+      {
+        "coverType": "poster",
+        "url": "http://image.tmdb.org/t/p/original/n8V09dDc02KsSN6Q4hC2BX6hN8X.jpg"
+      }
+    ],
+    "downloaded": false,
+    "remotePoster": "http://image.tmdb.org/t/p/original/n8V09dDc02KsSN6Q4hC2BX6hN8X.jpg",
+    "year": 1999,
+    "hasFile": false,
+    "profileId": 0,
+    "pathState": "dynamic",
+    "monitored": false,
+    "minimumAvailability": "tba",
+    "isAvailable": true,
+    "folderName": "",
+    "runtime": 0,
+    "tmdbId": 1893,
+    "titleSlug": "star-wars-episode-i-the-phantom-menace-1893",
+    "genres": [],
+    "tags": [],
+    "added": "0001-01-01T00:00:00Z",
+    "ratings": {
+      "votes": 9043,
+      "value": 6.4
+    },
+    "qualityProfileId": 0
+  },
+  {
+    "title": "Battle Star Wars",
+    "alternativeTitles": [],
+    "secondaryYearSourceId": 0,
+    "sortTitle": "battle star wars",
+    "sizeOnDisk": 0,
+    "status": "inCinemas",
+    "overview": "When the leader of the evil Coalition threatens to destroy a Rebel planet for its resources, his daughter will have no choice but to join the Rebel side and fight for what is right.",
+    "inCinemas": "2020-01-28T00:00:00Z",
+    "images": [
+      {
+        "coverType": "poster",
+        "url": "http://image.tmdb.org/t/p/original/eFq4BxVKiU367YvFytTCkLA8E6F.jpg"
+      }
+    ],
+    "downloaded": false,
+    "remotePoster": "http://image.tmdb.org/t/p/original/eFq4BxVKiU367YvFytTCkLA8E6F.jpg",
+    "year": 2020,
+    "hasFile": false,
+    "profileId": 0,
+    "pathState": "dynamic",
+    "monitored": false,
+    "minimumAvailability": "tba",
+    "isAvailable": true,
+    "folderName": "",
+    "runtime": 0,
+    "tmdbId": 667574,
+    "titleSlug": "battle-star-wars-667574",
+    "genres": [],
+    "tags": [],
+    "added": "0001-01-01T00:00:00Z",
+    "ratings": {
+      "votes": 1,
+      "value": 1.0
+    },
+    "qualityProfileId": 0
+  },
+  {
+    "title": "Star Wars: Episode II - Attack of the Clones",
+    "alternativeTitles": [],
+    "secondaryYearSourceId": 0,
+    "sortTitle": "star wars episode ii attack clones",
+    "sizeOnDisk": 0,
+    "status": "released",
+    "overview": "Following an assassination attempt on Senator Padmé Amidala, Jedi Knights Anakin Skywalker and Obi-Wan Kenobi investigate a mysterious plot that could change the galaxy forever.",
+    "inCinemas": "2002-05-15T00:00:00Z",
+    "images": [
+      {
+        "coverType": "poster",
+        "url": "http://image.tmdb.org/t/p/original/2vcNFtrZXNwIcBgH5e2xXCmVR8t.jpg"
+      }
+    ],
+    "downloaded": false,
+    "remotePoster": "http://image.tmdb.org/t/p/original/2vcNFtrZXNwIcBgH5e2xXCmVR8t.jpg",
+    "year": 2002,
+    "hasFile": false,
+    "profileId": 0,
+    "pathState": "dynamic",
+    "monitored": false,
+    "minimumAvailability": "tba",
+    "isAvailable": true,
+    "folderName": "",
+    "runtime": 0,
+    "tmdbId": 1894,
+    "titleSlug": "star-wars-episode-ii-attack-of-the-clones-1894",
+    "genres": [],
+    "tags": [],
+    "added": "0001-01-01T00:00:00Z",
+    "ratings": {
+      "votes": 8191,
+      "value": 6.5
+    },
+    "qualityProfileId": 0
+  },
+  {
+    "title": "Star Wars: Episode III - Revenge of the Sith",
+    "alternativeTitles": [],
+    "secondaryYearSourceId": 0,
+    "sortTitle": "star wars episode iii revenge sith",
+    "sizeOnDisk": 0,
+    "status": "released",
+    "overview": "The evil Darth Sidious enacts his final plan for unlimited power -- and the heroic Jedi Anakin Skywalker must choose a side.",
+    "inCinemas": "2005-05-17T00:00:00Z",
+    "images": [
+      {
+        "coverType": "poster",
+        "url": "http://image.tmdb.org/t/p/original/tgr5Pdy7ehZYBqBkN2K7Q02xgOb.jpg"
+      }
+    ],
+    "downloaded": false,
+    "remotePoster": "http://image.tmdb.org/t/p/original/tgr5Pdy7ehZYBqBkN2K7Q02xgOb.jpg",
+    "year": 2005,
+    "hasFile": false,
+    "profileId": 0,
+    "pathState": "dynamic",
+    "monitored": false,
+    "minimumAvailability": "tba",
+    "isAvailable": true,
+    "folderName": "",
+    "runtime": 0,
+    "tmdbId": 1895,
+    "titleSlug": "star-wars-episode-iii-revenge-of-the-sith-1895",
+    "genres": [],
+    "tags": [],
+    "added": "0001-01-01T00:00:00Z",
+    "ratings": {
+      "votes": 8461,
+      "value": 7.3
+    },
+    "qualityProfileId": 0
+  },
+  {
+    "title": "Star Wars: The Clone Wars",
+    "alternativeTitles": [],
+    "secondaryYearSourceId": 0,
+    "sortTitle": "star wars clone wars",
+    "sizeOnDisk": 0,
+    "status": "released",
+    "overview": "Set between Episode II and III the Clone Wars is the first computer animated Star Wars film. Anakin and Obi Wan must find out who kidnapped Jabba the Hutts son and return him safely. The Seperatists will try anything to stop them and ruin any chance of a diplomatic agreement between the Hutt's and the Republic.",
+    "inCinemas": "2008-08-05T00:00:00Z",
+    "images": [
+      {
+        "coverType": "poster",
+        "url": "http://image.tmdb.org/t/p/original/xd6yhmtS6mEURZLwUDT5raEMbf.jpg"
+      }
+    ],
+    "downloaded": false,
+    "remotePoster": "http://image.tmdb.org/t/p/original/xd6yhmtS6mEURZLwUDT5raEMbf.jpg",
+    "year": 2008,
+    "hasFile": false,
+    "profileId": 0,
+    "pathState": "dynamic",
+    "monitored": false,
+    "minimumAvailability": "tba",
+    "isAvailable": true,
+    "folderName": "",
+    "runtime": 0,
+    "tmdbId": 12180,
+    "titleSlug": "star-wars-the-clone-wars-12180",
+    "genres": [],
+    "tags": [],
+    "added": "0001-01-01T00:00:00Z",
+    "ratings": {
+      "votes": 946,
+      "value": 5.9
+    },
+    "qualityProfileId": 0
+  },
+  {
+    "title": "The Star Wars Holiday Special",
+    "alternativeTitles": [],
+    "secondaryYearSourceId": 0,
+    "sortTitle": "star wars holiday special",
+    "sizeOnDisk": 0,
+    "status": "released",
+    "overview": "Luke Skywalker and Han Solo battle evil Imperial forces to help Chewbacca reach his imperiled family on the Wookiee planet - in time for Life Day, their most important day of the year!",
+    "inCinemas": "1978-12-01T00:00:00Z",
+    "images": [
+      {
+        "coverType": "poster",
+        "url": "http://image.tmdb.org/t/p/original/3MsSWyFFWGNOneSfLv4Qtw8xThg.jpg"
+      }
+    ],
+    "downloaded": false,
+    "remotePoster": "http://image.tmdb.org/t/p/original/3MsSWyFFWGNOneSfLv4Qtw8xThg.jpg",
+    "year": 1978,
+    "hasFile": false,
+    "profileId": 0,
+    "pathState": "dynamic",
+    "monitored": false,
+    "minimumAvailability": "tba",
+    "isAvailable": true,
+    "folderName": "",
+    "runtime": 0,
+    "tmdbId": 74849,
+    "titleSlug": "the-star-wars-holiday-special-74849",
+    "genres": [],
+    "tags": [],
+    "added": "0001-01-01T00:00:00Z",
+    "ratings": {
+      "votes": 222,
+      "value": 3.1
+    },
+    "qualityProfileId": 0
+  },
+  {
+    "title": "Phineas and Ferb: Star Wars",
+    "alternativeTitles": [],
+    "secondaryYearSourceId": 0,
+    "sortTitle": "phineas ferb star wars",
+    "sizeOnDisk": 0,
+    "status": "released",
+    "overview": "Phineas and Ferb travel to a galaxy far far away to help out some rebel heroes.",
+    "inCinemas": "2014-07-26T00:00:00Z",
+    "images": [
+      {
+        "coverType": "poster",
+        "url": "http://image.tmdb.org/t/p/original/c1C8V9OmzRAyTukldTbImyGayu0.jpg"
+      }
+    ],
+    "downloaded": false,
+    "remotePoster": "http://image.tmdb.org/t/p/original/c1C8V9OmzRAyTukldTbImyGayu0.jpg",
+    "year": 2014,
+    "hasFile": false,
+    "profileId": 0,
+    "pathState": "dynamic",
+    "monitored": false,
+    "minimumAvailability": "tba",
+    "isAvailable": true,
+    "folderName": "",
+    "runtime": 0,
+    "tmdbId": 392216,
+    "titleSlug": "phineas-and-ferb-star-wars-392216",
+    "genres": [],
+    "tags": [],
+    "added": "0001-01-01T00:00:00Z",
+    "ratings": {
+      "votes": 53,
+      "value": 7.1
+    },
+    "qualityProfileId": 0
+  },
+  {
+    "title": "Robot Chicken: Star Wars",
+    "alternativeTitles": [],
+    "secondaryYearSourceId": 0,
+    "sortTitle": "robot chicken star wars",
+    "sizeOnDisk": 0,
+    "status": "released",
+    "overview": "Fans of Adult Swim's \"Robot Chicken\" and the Star Wars movie franchise won't want to miss this collection of 30 sketches. This hilarious compilation features an array of skits -- such as \"Darth Vader's Collect Call\" and \"Inside the AT-AT\" -- as well as the incredible voice talents of Hulk Hogan, Malcolm McDowell, Conan O'Brien and even the original Luke Skywalker himself, Mark Hamill.",
+    "inCinemas": "2007-07-17T00:00:00Z",
+    "images": [
+      {
+        "coverType": "poster",
+        "url": "http://image.tmdb.org/t/p/original/h44WN4mVJ6wEpJgLaaNoFjv0NAo.jpg"
+      }
+    ],
+    "downloaded": false,
+    "remotePoster": "http://image.tmdb.org/t/p/original/h44WN4mVJ6wEpJgLaaNoFjv0NAo.jpg",
+    "year": 2007,
+    "hasFile": false,
+    "profileId": 0,
+    "pathState": "dynamic",
+    "monitored": false,
+    "minimumAvailability": "tba",
+    "isAvailable": true,
+    "folderName": "",
+    "runtime": 0,
+    "tmdbId": 42979,
+    "titleSlug": "robot-chicken-star-wars-42979",
+    "genres": [],
+    "tags": [],
+    "added": "0001-01-01T00:00:00Z",
+    "ratings": {
+      "votes": 139,
+      "value": 7.3
+    },
+    "qualityProfileId": 0
+  },
+  {
+    "title": "Star Wars: Greatest Moments",
+    "alternativeTitles": [],
+    "secondaryYearSourceId": 0,
+    "sortTitle": "star wars greatest moments",
+    "sizeOnDisk": 0,
+    "status": "released",
+    "overview": "Alex Zane counts down the top 20 Star Wars moments as voted by the public. Includes contributions from famous fans as well as the stars and crew of the intergalactic saga.",
+    "inCinemas": "2015-12-26T00:00:00Z",
+    "images": [
+      {
+        "coverType": "poster",
+        "url": "http://image.tmdb.org/t/p/original/65jlytLScOl2pEzm1ky6aagVreR.jpg"
+      }
+    ],
+    "downloaded": false,
+    "remotePoster": "http://image.tmdb.org/t/p/original/65jlytLScOl2pEzm1ky6aagVreR.jpg",
+    "year": 2015,
+    "hasFile": false,
+    "profileId": 0,
+    "pathState": "dynamic",
+    "monitored": false,
+    "minimumAvailability": "tba",
+    "isAvailable": true,
+    "folderName": "",
+    "runtime": 0,
+    "tmdbId": 378386,
+    "titleSlug": "star-wars-greatest-moments-378386",
+    "genres": [],
+    "tags": [],
+    "added": "0001-01-01T00:00:00Z",
+    "ratings": {
+      "votes": 11,
+      "value": 6.9
+    },
+    "qualityProfileId": 0
+  },
+  {
+    "title": "Robot Chicken: Star Wars Episode II",
+    "alternativeTitles": [],
+    "secondaryYearSourceId": 0,
+    "sortTitle": "robot chicken star wars episode ii",
+    "sizeOnDisk": 0,
+    "status": "released",
+    "overview": "Seth Green and Matthew Senreich serve up more hilarious Star Wars-inspired satire in this second compilation of sketches featuring the zany stop-motion animation of Adult Swim's \"Robot Chicken.\" Gary the stormtrooper deals with irascible boss Darth Vader on Take Your Daughter to Work Day, while Anakin babysits a certain up-and-coming Jedi. Carrie Fisher, Billy Dee Williams, Conan O'Brien and other stars provide voices.",
+    "inCinemas": "2008-11-16T00:00:00Z",
+    "images": [
+      {
+        "coverType": "poster",
+        "url": "http://image.tmdb.org/t/p/original/kTCaL5VFwQr11P8dZpb0yzk4oQy.jpg"
+      }
+    ],
+    "downloaded": false,
+    "remotePoster": "http://image.tmdb.org/t/p/original/kTCaL5VFwQr11P8dZpb0yzk4oQy.jpg",
+    "year": 2008,
+    "hasFile": false,
+    "profileId": 0,
+    "pathState": "dynamic",
+    "monitored": false,
+    "minimumAvailability": "tba",
+    "isAvailable": true,
+    "folderName": "",
+    "runtime": 0,
+    "tmdbId": 42982,
+    "titleSlug": "robot-chicken-star-wars-episode-ii-42982",
+    "genres": [],
+    "tags": [],
+    "added": "0001-01-01T00:00:00Z",
+    "ratings": {
+      "votes": 78,
+      "value": 7.7
+    },
+    "qualityProfileId": 0
+  },
+  {
+    "title": "Robot Chicken: Star Wars Episode III",
+    "alternativeTitles": [],
+    "secondaryYearSourceId": 0,
+    "sortTitle": "robot chicken star wars episode iii",
+    "sizeOnDisk": 0,
+    "status": "released",
+    "overview": "Robot Chicken: Star Wars Episode III, directed by Chris McKay, combines the satirical sensibilities of Green and Matthew Senreich's Robot Chicken with characters of the Star Wars universe.",
+    "inCinemas": "2010-12-19T00:00:00Z",
+    "images": [
+      {
+        "coverType": "poster",
+        "url": "http://image.tmdb.org/t/p/original/gsKEyIOJzNgLdbGjTnFds8hI4rV.jpg"
+      }
+    ],
+    "downloaded": false,
+    "remotePoster": "http://image.tmdb.org/t/p/original/gsKEyIOJzNgLdbGjTnFds8hI4rV.jpg",
+    "year": 2010,
+    "hasFile": false,
+    "profileId": 0,
+    "pathState": "dynamic",
+    "monitored": false,
+    "minimumAvailability": "tba",
+    "isAvailable": true,
+    "folderName": "",
+    "runtime": 0,
+    "tmdbId": 51888,
+    "titleSlug": "robot-chicken-star-wars-episode-iii-51888",
+    "genres": [],
+    "tags": [],
+    "added": "0001-01-01T00:00:00Z",
+    "ratings": {
+      "votes": 79,
+      "value": 7.5
+    },
+    "qualityProfileId": 0
+  },
+  {
+    "title": "Star Wars: The Legacy Revealed",
+    "alternativeTitles": [],
+    "secondaryYearSourceId": 0,
+    "sortTitle": "star wars legacy revealed",
+    "sizeOnDisk": 0,
+    "status": "released",
+    "overview": "Film-makers and academics discuss the use of mythology in Star Wars and the impact of the films on society",
+    "inCinemas": "2007-05-28T00:00:00Z",
+    "images": [
+      {
+        "coverType": "poster",
+        "url": "http://image.tmdb.org/t/p/original/dFvudLgvS0Upn2X6wPBRnntXCBy.jpg"
+      }
+    ],
+    "downloaded": false,
+    "remotePoster": "http://image.tmdb.org/t/p/original/dFvudLgvS0Upn2X6wPBRnntXCBy.jpg",
+    "year": 2007,
+    "hasFile": false,
+    "profileId": 0,
+    "pathState": "dynamic",
+    "monitored": false,
+    "minimumAvailability": "tba",
+    "isAvailable": true,
+    "folderName": "",
+    "runtime": 0,
+    "tmdbId": 128295,
+    "titleSlug": "star-wars-the-legacy-revealed-128295",
+    "genres": [],
+    "tags": [],
+    "added": "0001-01-01T00:00:00Z",
+    "ratings": {
+      "votes": 19,
+      "value": 7.8
+    },
+    "qualityProfileId": 0
+  },
+  {
+    "title": "Star Wars: TIE Fighter",
+    "alternativeTitles": [],
+    "secondaryYearSourceId": 0,
+    "sortTitle": "star wars tie fighter",
+    "sizeOnDisk": 0,
+    "status": "released",
+    "overview": "Paul “OtaKing” Johnson drops a real treat in the form of this “Star Wars: TIE Fighter” animated short fan film. Complete with appropriately radical electric guitar solos and impressive attention to detail, “TIE Fighter” casts the forces of the Galactic Empire not in the role of disposable cannon fodder seen in the Star Wars films, but as near-suicidal reckless angels of death.  Johnson animated this 7-minute short over the course of “four years’ worth of weekends,” and his love and attention-to-detail shows.",
+    "inCinemas": "2015-03-24T00:00:00Z",
+    "images": [
+      {
+        "coverType": "poster",
+        "url": "http://image.tmdb.org/t/p/original/jwUexLOEBMFMbBoKzK4AT7hQYDw.jpg"
+      }
+    ],
+    "downloaded": false,
+    "remotePoster": "http://image.tmdb.org/t/p/original/jwUexLOEBMFMbBoKzK4AT7hQYDw.jpg",
+    "year": 2015,
+    "hasFile": false,
+    "profileId": 0,
+    "pathState": "dynamic",
+    "monitored": false,
+    "minimumAvailability": "tba",
+    "isAvailable": true,
+    "folderName": "",
+    "runtime": 0,
+    "tmdbId": 332479,
+    "titleSlug": "star-wars-tie-fighter-332479",
+    "genres": [],
+    "tags": [],
+    "added": "0001-01-01T00:00:00Z",
+    "ratings": {
+      "votes": 65,
+      "value": 8.0
+    },
+    "qualityProfileId": 0
+  },
+  {
+    "title": "Lego Star Wars: The Padawan Menace",
+    "alternativeTitles": [],
+    "secondaryYearSourceId": 0,
+    "sortTitle": "lego star wars padawan menace",
+    "sizeOnDisk": 0,
+    "status": "released",
+    "overview": "A routine Jedi Academy field trip is turned into a rip-roaring comic adventure in LEGO Star Wars: The Padawan Menace. Tour guide Master Yoda leads a group of rambunctious Jedi Younglings through Senate chambers when he senses a disturbance in the Force. Summoned to help save the Republic, he discovers that one of the Younglings secretly boarded his ship...and has a taste for adventure! Meanwhile, C-3PO and R2-D2 are put in charge of the boisterous group and find themselves in over their heads. As the evil Sith prepare to wreak havoc, it's up to Yoda and the Droids to ensure that their young charges aren't torn to bricks!",
+    "inCinemas": "2011-07-22T00:00:00Z",
+    "images": [
+      {
+        "coverType": "poster",
+        "url": "http://image.tmdb.org/t/p/original/cIKQu7UlXAv94guz14Zij0Xm0tx.jpg"
+      }
+    ],
+    "downloaded": false,
+    "remotePoster": "http://image.tmdb.org/t/p/original/cIKQu7UlXAv94guz14Zij0Xm0tx.jpg",
+    "year": 2011,
+    "hasFile": false,
+    "profileId": 0,
+    "pathState": "dynamic",
+    "monitored": false,
+    "minimumAvailability": "tba",
+    "isAvailable": true,
+    "folderName": "",
+    "runtime": 0,
+    "tmdbId": 70608,
+    "titleSlug": "lego-star-wars-the-padawan-menace-70608",
+    "genres": [],
+    "tags": [],
+    "added": "0001-01-01T00:00:00Z",
+    "ratings": {
+      "votes": 63,
+      "value": 6.1
+    },
+    "qualityProfileId": 0
+  }
+]

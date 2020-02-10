@@ -51,7 +51,7 @@ def handle_message(text, message):
 
     embed = present_choices(message.author.mention, results)
     embed = discord.Embed(description=embed)
-    return { "embed": embed, "reactions": number_emojis }
+    return { "embed": embed, "reactions": number_emojis[:len(results)] }
 
 def handle_reaction(reaction, user):
     """ If the user clicks an emoji on one of our search result messages, this triggers the

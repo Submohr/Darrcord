@@ -27,7 +27,7 @@ def request_radarr_movie(movie):
     resp = son_resp["json"]
     if not resp:
         ret = {'content': "Unknown error.  No error message.  Sorry."}
-    if code >= 200 and code < 400:
+    elif code >= 200 and code < 400:
         ret = {'content': f"Successfully requested {resp[0]['title']}: {radarr.tmdb_url}{id}"}
     else:
         ret = {'content': f"Error adding movie.  Error message is: {resp[0]['errorMessage']}."}

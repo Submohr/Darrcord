@@ -26,3 +26,7 @@ Similarly for movies:  it uses the tmdb ID of a show.  To find it, go to https:/
 If the channel is set in SONARR_CHANNELS or RADARR_CHANNELS in the config, the `tvdb:` and `tmdb:` prefixes can be omitted.
 
 #### More coming soon.
+
+### Testing
+
+Run unit tests with `python -m unittest discover -v`.
