@@ -1,0 +1,14 @@
+[
+  {
+    "propertyName": "TvdbId",
+    "errorMessage": "This series has already been added",
+    "attemptedValue": 364093,
+    "severity": "error",
+    "errorCode": "SeriesExistsValidator",
+    "formattedMessageArguments": [],
+    "formattedMessagePlaceholderValues": {
+      "propertyName": "Tvdb Id",
+      "propertyValue": 364093
+    }
+  }
+]

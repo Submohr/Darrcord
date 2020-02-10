@@ -3,7 +3,7 @@ from darrcord import logger
 from darrcord import api
 
 conn = Config.RADARR_CONNECTION
-
+tmdb_url = 'https://www.themoviedb.org/movie/'
 
 def req_movie_lookup(name=None,tmdbId=0,imdbIdStr=None,imdbId=0):
     if name is None and tmdbId==0 and imdbIdStr is None and imdbId == 0:

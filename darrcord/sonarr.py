@@ -3,7 +3,7 @@ from darrcord import logger
 from darrcord import api
 
 conn = Config.SONARR_CONNECTION
-
+tvdb_url = 'https://www.thetvdb.com/?tab=series&id='
 
 def req_series_lookup(name=None,id=0):
     if name is None and id==0:

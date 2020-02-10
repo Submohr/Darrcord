@@ -1,0 +1,12 @@
+[
+  {
+    "propertyName": "TmdbId",
+    "errorMessage": "This movie has already been added",
+    "attemptedValue": 11,
+    "formattedMessageArguments": [],
+    "formattedMessagePlaceholderValues": {
+      "propertyName": "Tmdb Id",
+      "propertyValue": 11
+    }
+  }
+]

@@ -1,0 +1,44 @@
+[
+{
+  "title": "Star Wars",
+  "alternativeTitles": [],
+  "secondaryYearSourceId": 0,
+  "sortTitle": "star wars",
+  "sizeOnDisk": 0,
+  "status": "tba",
+  "images": [
+    {
+      "coverType": "poster",
+      "url": "/radarr/MediaCover/1233/poster.jpg"
+    },
+    {
+      "coverType": "fanart",
+      "url": "/radarr/MediaCover/1233/fanart.jpg"
+    }
+  ],
+  "downloaded": false,
+  "year": 1977,
+  "hasFile": false,
+  "path": "/srv/anon/movies/library/Star Wars (1977)",
+  "profileId": 1,
+  "pathState": "dynamic",
+  "monitored": true,
+  "minimumAvailability": "tba",
+  "isAvailable": true,
+  "folderName": "/srv/anon/movies/library/Star Wars (1977)",
+  "runtime": 0,
+  "cleanTitle": "starwars",
+  "tmdbId": 11,
+  "titleSlug": "star-wars-11",
+  "genres": [],
+  "tags": [],
+  "added": "2020-02-10T06:17:46.01669Z",
+  "addOptions": {
+    "searchForMovie": true,
+    "ignoreEpisodesWithFiles": false,
+    "ignoreEpisodesWithoutFiles": false
+  },
+  "qualityProfileId": 1,
+  "id": 1233
+}
+]
