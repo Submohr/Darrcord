@@ -35,7 +35,7 @@ class TestSearchCommand(unittest.TestCase):
     def test_handle_message_three_results(self, mock_req_series_lookup, mock_req_movie_lookup, mock_config):
         result_count = 3
 
-        with open(sonarr_payload) as f:
+        with open(sonarr_payload, encoding="utf-8") as f:
             sonarr_json = json.load(f)
         mock_req_series_lookup.return_value = { "json": sonarr_json[:result_count] }
         mock_req_movie_lookup.return_value = { "json": [] }
@@ -50,9 +50,9 @@ class TestSearchCommand(unittest.TestCase):
     @patch('darrcord.radarr.req_movie_lookup', autospec=True)
     @patch('darrcord.sonarr.req_series_lookup', autospec=True)
     def test_handle_message_full_results(self, mock_req_series_lookup, mock_req_movie_lookup, mock_config):
-        with open(sonarr_payload) as f:
+        with open(sonarr_payload, encoding="utf-8") as f:
             sonarr_json = json.load(f)
-        with open(radarr_payload) as f:
+        with open(radarr_payload, encoding="utf-8") as f:
             radarr_json = json.load(f)
         mock_req_series_lookup.return_value = { "json": sonarr_json }
         mock_req_movie_lookup.return_value = { "json": radarr_json }
