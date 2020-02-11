@@ -46,7 +46,7 @@ async def on_reaction_add(reaction, user):
 
 @client.event
 async def on_message(message):
-    """ This sends the message to each command until it finds one that generates a reply. """
+    """ Sends the message to each command until it finds one that generates a reply. """
 
     try:
         # we do not want the bot to look at its own messages
