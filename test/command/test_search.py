@@ -73,8 +73,7 @@ class TestSearchCommand(unittest.TestCase):
     @patch('darrcord.radarr.req_movie_lookup', autospec=True)
     @patch('darrcord.sonarr.req_series_lookup', autospec=True)
     def test_handle_message_sonarr_channel(self, mock_req_series_lookup, mock_req_movie_lookup, mock_config):
-        test_channel = 'test_channel'
-        type(mock_config).SONARR_CHANNELS = PropertyMock(return_value=[ test_channel ])
+        type(mock_config).SONARR_CHANNELS = PropertyMock(return_value=[ self.test_channel ])
         mock_req_series_lookup.return_value = { "json": [] }
         mock_req_movie_lookup.return_value = { "json": [] }
         reply = search.handle_message('', self.mock_message())
@@ -85,8 +84,7 @@ class TestSearchCommand(unittest.TestCase):
     @patch('darrcord.radarr.req_movie_lookup', autospec=True)
     @patch('darrcord.sonarr.req_series_lookup', autospec=True)
     def test_handle_message_radarr_channel(self, mock_req_series_lookup, mock_req_movie_lookup, mock_config):
-        test_channel = 'test_channel'
-        type(mock_config).RADARR_CHANNELS = PropertyMock(return_value=[ test_channel ])
+        type(mock_config).RADARR_CHANNELS = PropertyMock(return_value=[ self.test_channel ])
         mock_req_series_lookup.return_value = { "json": [] }
         mock_req_movie_lookup.return_value = { "json": [] }
         reply = search.handle_message('', self.mock_message())
