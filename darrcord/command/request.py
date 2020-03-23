@@ -39,14 +39,10 @@ def handle_message(text, message):
     prefix can be omitted. """
 
     radarr_regex = r'tmdb:(\d+)'
-    if message and str(message.channel) in Config.RADARR_CHANNELS:
-        radarr_regex = r'(\d+)'
     if match := re.fullmatch(radarr_regex, text):
         return request_radarr_movie(match.group(1))
 
     sonarr_regex = r'tvdb:(\d+)'
-    if message and str(message.channel) in Config.SONARR_CHANNELS:
-        sonarr_regex = r'(\d+)'
     if match := re.fullmatch(sonarr_regex, text):
         return request_sonarr_series(match.group(1))
 
