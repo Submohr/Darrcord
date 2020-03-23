@@ -126,7 +126,7 @@ class TestSearchCommand(unittest.TestCase):
         mock_reaction.__str__.return_value = "1️⃣"
         mock_reaction.message.embeds = [ mock_embed ]
         reply = search.handle_reaction(mock_reaction, mock_user)
-        mock_request_command.assert_called_with("tmdb:11", None)
+        mock_request_command.assert_called_with("tmdb:11", None, title='Star Wars (1977)')
 
 
     @patch('darrcord.command.search.Config')
@@ -140,7 +140,7 @@ class TestSearchCommand(unittest.TestCase):
         mock_reaction.__str__.return_value = "2️⃣"
         mock_reaction.message.embeds = [ mock_embed ]
         reply = search.handle_reaction(mock_reaction, mock_user)
-        mock_request_command.assert_called_with("tmdb:181812", None)
+        mock_request_command.assert_called_with("tmdb:181812", None, title='Star Wars: The Rise of Skywalker (2019)')
 
 if __name__ == '__main__':
     unittest.main()
