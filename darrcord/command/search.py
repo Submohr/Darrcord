@@ -63,7 +63,7 @@ def handle_reaction(reaction, user):
     content = reaction.message.embeds[0].description
 
     # we only care about reactions from whoever performed the search
-    if not f"<@{user.id}>" in content:
+    if not f"<@{user.id}>" in content and not f"<@!{user.id}>" in content:
         return
 
     # I didn't want to store any state in the bot so we are awkwardly parsing all the state
