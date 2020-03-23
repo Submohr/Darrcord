@@ -72,14 +72,14 @@ def handle_reaction(reaction, user):
     if not selected_line:
         return
 
-    radarr_regex = re.escape(radarr.tmdb_url) + r'(\d+)'
+    radarr_regex = r'\[([^\]]+)\]\(' + re.escape(radarr.tmdb_url) + r'(\d+)\)'
     if radarr_result := re.search(radarr_regex, selected_line.group(0)):
-        tmdb = "tmdb:" + radarr_result.group(1)
+        tmdb = "tmdb:" + radarr_result.group(2)
         logger.info(f"{user} selected movie {tmdb}")
-        return request.handle_message(tmdb, None)
+        return request.handle_message(tmdb, None, title=radarr_result.group(1))
 
-    sonarr_regex = re.escape(sonarr.tvdb_url) + r'(\d+)'
+    sonarr_regex = r'\[([^\]]+)\]\(' + re.escape(sonarr.tvdb_url) + r'(\d+)\)'
     if sonarr_result := re.search(sonarr_regex, selected_line.group(0)):
-        tvdb = "tvdb:" + sonarr_result.group(1)
+        tvdb = "tvdb:" + sonarr_result.group(2)
         logger.info(f"{user} selected series {tvdb}")
-        return request.handle_message(tvdb, None)
+        return request.handle_message(tvdb, None, title=sonarr_result.group(1))

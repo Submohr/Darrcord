@@ -33,7 +33,7 @@ class TestRequestCommand(unittest.TestCase):
     def test_handle_message_sonarr_empty_response(self, mock_req_series_request, mock_req_movie_request, mock_config):
         mock_req_series_request.return_value = { "code": 0, "json": None }
         reply = request.handle_message('tvdb:0', None)
-        self.assertEqual(reply, {'content': 'Unknown error.  No error message.  Sorry.'})
+        self.assertEqual(reply, {'content': 'Error adding series.  No error message.  Sorry.'})
 
     @patch('darrcord.command.request.Config')
     @patch('darrcord.radarr.req_movie_request', autospec=True)
@@ -61,7 +61,7 @@ class TestRequestCommand(unittest.TestCase):
     def test_handle_message_radarr_empty_response(self, mock_req_series_request, mock_req_movie_request, mock_config):
         mock_req_movie_request.return_value = { "code": 0, "json": None }
         reply = request.handle_message('tmdb:0', None)
-        self.assertEqual(reply, {'content': 'Unknown error.  No error message.  Sorry.'})
+        self.assertEqual(reply, {'content': 'Error adding movie.  No error message.  Sorry.'})
 
     @patch('darrcord.command.request.Config')
     @patch('darrcord.radarr.req_movie_request', autospec=True)
