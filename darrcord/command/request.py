@@ -33,7 +33,7 @@ def request_radarr_movie(movie, title="movie"):
         ret = {'content': f"Error adding {title}.  Error message is: {resp[0]['errorMessage']}."}
     return ret
 
-def handle_message(text, message, **kwargs):
+async def handle_message(text, message, **kwargs):
     """ Handles messages in the format tmdb:12345 or tvdb:12345, and ignores anything else.
     If the message is received on a channel configured specially for radarr or sonarr, the
     prefix can be omitted. """
@@ -46,5 +46,5 @@ def handle_message(text, message, **kwargs):
     if match := re.fullmatch(sonarr_regex, text):
         return request_sonarr_series(match.group(1), **kwargs)
 
-def handle_reaction(reaction, user):
+async def handle_reaction(reaction, user):
     pass
