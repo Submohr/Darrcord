@@ -1,26 +1,27 @@
 import os
+import sys
 import logging
 from logging.handlers import RotatingFileHandler
 from config import Config
 
-if not os.path.exists(Config.LOG_FOLDER):
-    os.mkdir(Config.LOG_FOLDER)
-
 logger = logging.getLogger("Rotating Log")
-logger.setLevel(Config.LOG_LEVEL)
+logger.setLevel(Config.LOG_LEVEL or "DEBUG")
 
-try:
-    handler = RotatingFileHandler("/".join([Config.LOG_FOLDER, Config.LOG_NAME]), maxBytes=102400, backupCount=10)
-    handler.setFormatter(logging.Formatter('%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]'))
-    logger.addHandler(handler)
-    logger.info("Logger initialized.")
-except Exception as e:
-    logger.addHandler(logging.NullHandler())
-    print(e)
-except:
-    logger.addHandler(logging.NullHandler())
+handler = None
 
+if Config.LOG_FOLDER and Config.LOG_NAME:
+    try:
+        os.makedirs(Config.LOG_FOLDER, exist_ok=True)
+        handler = RotatingFileHandler("/".join([Config.LOG_FOLDER, Config.LOG_NAME]), maxBytes=102400, backupCount=10)
+    except Exception as e:
+        print(e)
 
+if not handler:
+    handler = logging.StreamHandler(sys.stdout)
+
+handler.setFormatter(logging.Formatter('%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]'))
+logger.addHandler(handler)
+logger.info(f"Logger initialized with {handler}.")
 
 
 from darrcord import disc
