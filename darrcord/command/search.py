@@ -9,15 +9,13 @@ from darrcord.command import request
 import json
 
 number_emojis = ["1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣"]
-tmdb_movie_url = 'https://www.themoviedb.org/movie/'
-tmdb_tv_url = 'https://www.themoviedb.org/tv/'
 nonce = 926835
 
 def present_tmdb_movie_choice(json):
-    return f"[{json['title']} ({json['year']})]({tmdb_movie_url}{json['id']})"
+    return f"[{json['title']} ({json['year']})]({tmdb.movie_url}{json['id']})"
 
 def present_tmdb_tv_choice(json):
-    return f"[{json['title']} ({json['year']})]({tmdb_tv_url}{json['id']})"
+    return f"[{json['title']} ({json['year']})]({tmdb.tv_url}{json['id']})"
 
 def present_tmdb_choice(json):
     if json['media_type'] == 'tv':
@@ -73,13 +71,13 @@ def handle_reaction(reaction, user):
     if not selected_line:
         return
 
-    radarr_regex = r'\[([^\]]+)\]\(' + re.escape(tmdb_movie_url) + r'(\d+)\)'
+    radarr_regex = r'\[([^\]]+)\]\(' + re.escape(tmdb.movie_url) + r'(\d+)\)'
     if radarr_result := re.search(radarr_regex, selected_line.group(0)):
-        tmdb = "tmdb:" + radarr_result.group(2)
-        logger.info(f"{user} selected movie {tmdb}")
-        return request.handle_message(tmdb, None, title=radarr_result.group(1))
+        tmdb_id = "tmdb:" + radarr_result.group(2)
+        logger.info(f"{user} selected movie {tmdb_id}")
+        return request.handle_message(tmdb_id, None, title=radarr_result.group(1))
 
-    sonarr_regex = r'\[([^\]]+)\]\(' + re.escape(tmdb_tv_url) + r'(\d+)\)'
+    sonarr_regex = r'\[([^\]]+)\]\(' + re.escape(tmdb.tv_url) + r'(\d+)\)'
     if sonarr_result := re.search(sonarr_regex, selected_line.group(0)):
         tvdb = "tmdbtv:" + sonarr_result.group(2)
         logger.info(f"{user} selected series {tvdb}")

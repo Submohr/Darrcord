@@ -4,6 +4,7 @@ from config import Config
 from darrcord import sonarr
 from darrcord import radarr
 from darrcord import logger
+from darrcord import tmdb
 
 nonce = 202260
 
@@ -45,6 +46,14 @@ async def handle_message(text, message, **kwargs):
     sonarr_regex = r'tvdb:(\d+)'
     if match := re.fullmatch(sonarr_regex, text):
         return request_sonarr_series(match.group(1), **kwargs)
+
+    sonarr_tmdb_regex = r'tmdbtv:(\d+)'
+    if match := re.fullmatch(sonarr_tmdb_regex, text):
+        tmdb_id = match.group(1)
+        tvdb_id = await tmdb.tmdb_to_tvdb(tmdb_id)
+        if not tvdb_id:
+            return {'content': f"Error retrieving series {text} from TMDB. Check {tmdb.tv_url}{tmdb_id}"}
+        return request_sonarr_series(tvdb_id, **kwargs)
 
 async def handle_reaction(reaction, user):
     pass
