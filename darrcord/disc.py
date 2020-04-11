@@ -38,7 +38,7 @@ async def on_reaction_add(reaction, user):
 
         for cmd in commands:
             if cmd.nonce == reaction.message.nonce:
-                reply = cmd.handle_reaction(reaction, user)
+                reply = await cmd.handle_reaction(reaction, user)
                 if reply:
                     await send_reply(cmd, reaction.message.channel, reply)
     except (ValueError, Exception) as e:
@@ -59,7 +59,7 @@ async def on_message(message):
         reply = None
 
         for cmd in commands:
-            reply = cmd.handle_message(text, message)
+            reply = await cmd.handle_message(text, message)
             if reply:
                 await send_reply(cmd, message.channel, reply)
                 break

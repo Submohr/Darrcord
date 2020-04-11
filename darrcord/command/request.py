@@ -4,6 +4,7 @@ from config import Config
 from darrcord import sonarr
 from darrcord import radarr
 from darrcord import logger
+from darrcord import tmdb
 
 nonce = 202260
 
@@ -33,7 +34,7 @@ def request_radarr_movie(movie, title="movie"):
         ret = {'content': f"Error adding {title}.  Error message is: {resp[0]['errorMessage']}."}
     return ret
 
-def handle_message(text, message, **kwargs):
+async def handle_message(text, message, **kwargs):
     """ Handles messages in the format tmdb:12345 or tvdb:12345, and ignores anything else.
     If the message is received on a channel configured specially for radarr or sonarr, the
     prefix can be omitted. """
@@ -46,5 +47,13 @@ def handle_message(text, message, **kwargs):
     if match := re.fullmatch(sonarr_regex, text):
         return request_sonarr_series(match.group(1), **kwargs)
 
-def handle_reaction(reaction, user):
+    sonarr_tmdb_regex = r'tmdbtv:(\d+)'
+    if match := re.fullmatch(sonarr_tmdb_regex, text):
+        tmdb_id = match.group(1)
+        tvdb_id = await tmdb.tmdb_to_tvdb(tmdb_id)
+        if not tvdb_id:
+            return {'content': f"Error retrieving series {text} from TMDB. Check {tmdb.tv_url}{tmdb_id}"}
+        return request_sonarr_series(tvdb_id, **kwargs)
+
+async def handle_reaction(reaction, user):
     pass

@@ -8,6 +8,7 @@ load_dotenv(os.path.join(basedir,'.env'))
 
 class Config(object):
     DISCORD_TOKEN = os.environ.get('DISCORD_TOKEN')
+    TMDB_API_KEY = os.environ.get('TMDB_API_KEY')
 
     LOG_LEVEL = os.environ.get('LOG_LEVEL')
     LOG_FOLDER = os.environ.get('LOG_FOLDER')
