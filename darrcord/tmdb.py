@@ -27,7 +27,7 @@ async def search_multi(search_terms, media_types):
     def process(entry):
         date = entry.get('release_date') or entry.get('first_air_date') or ''
         entry['year'] = date.split('-')[0]
-        entry['title'] = entry.get('original_title') or entry.get('original_name')
+        entry['title'] = entry.get('title') or entry.get('name')
         return entry
 
     return [ process(entry) for entry in json['results'] if entry['media_type'] in media_types ]
