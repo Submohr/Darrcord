@@ -7,10 +7,9 @@ from darrcord import radarr
 from darrcord.command import search
 from unittest.mock import PropertyMock, MagicMock, patch
 
-sonarr_payload = os.path.join(os.path.dirname(__file__), 'sonarr_search_payload.json')
-radarr_payload = os.path.join(os.path.dirname(__file__), 'radarr_search_payload.json')
+tmdb_payload = os.path.join(os.path.dirname(__file__), 'tmdb_search_payload.json')
 
-class TestSearchCommand(unittest.TestCase):
+class TestSearchCommand(unittest.IsolatedAsyncioTestCase):
     test_channel = 'test_channel'
 
     def mock_message(self):
@@ -21,42 +20,35 @@ class TestSearchCommand(unittest.TestCase):
     #### handle_message ####
 
     @patch('darrcord.command.search.Config')
-    @patch('darrcord.radarr.req_movie_lookup', autospec=True)
-    @patch('darrcord.sonarr.req_series_lookup', autospec=True)
-    def test_handle_message_no_results(self, mock_req_series_lookup, mock_req_movie_lookup, mock_config):
-        mock_req_series_lookup.return_value = { "json": [] }
-        mock_req_movie_lookup.return_value = { "json": [] }
-        reply = search.handle_message('', self.mock_message())
+    @patch('darrcord.tmdb.search_multi', autospec=True)
+    async def test_handle_message_no_results(self, mock_search_multi, mock_config):
+        mock_search_multi.return_value = []
+        reply = await search.handle_message('', self.mock_message())
         self.assertEqual(reply, {'content': 'No results.'})
 
     @patch('darrcord.command.search.Config')
-    @patch('darrcord.radarr.req_movie_lookup', autospec=True)
-    @patch('darrcord.sonarr.req_series_lookup', autospec=True)
-    def test_handle_message_three_results(self, mock_req_series_lookup, mock_req_movie_lookup, mock_config):
+    @patch('darrcord.tmdb.search_multi', autospec=True)
+    async def test_handle_message_three_results(self, mock_search_multi, mock_config):
         result_count = 3
 
-        with open(sonarr_payload, encoding="utf-8") as f:
-            sonarr_json = json.load(f)
-        mock_req_series_lookup.return_value = { "json": sonarr_json[:result_count] }
-        mock_req_movie_lookup.return_value = { "json": [] }
-        reply = search.handle_message('', self.mock_message())
+        with open(tmdb_payload) as f:
+            tmdb_json = json.load(f)
+        mock_search_multi.return_value = tmdb_json[:result_count]
+        reply = await search.handle_message('', self.mock_message())
 
         expected_emojis = search.number_emojis[:result_count]
         for emoji in expected_emojis:
             self.assertRegex(reply['embed'].description, emoji)
         self.assertEqual(reply['reactions'], expected_emojis)
 
+
     @patch('darrcord.command.search.Config')
-    @patch('darrcord.radarr.req_movie_lookup', autospec=True)
-    @patch('darrcord.sonarr.req_series_lookup', autospec=True)
-    def test_handle_message_full_results(self, mock_req_series_lookup, mock_req_movie_lookup, mock_config):
-        with open(sonarr_payload, encoding="utf-8") as f:
-            sonarr_json = json.load(f)
-        with open(radarr_payload, encoding="utf-8") as f:
-            radarr_json = json.load(f)
-        mock_req_series_lookup.return_value = { "json": sonarr_json }
-        mock_req_movie_lookup.return_value = { "json": radarr_json }
-        reply = search.handle_message('', self.mock_message())
+    @patch('darrcord.tmdb.search_multi', autospec=True)
+    async def test_handle_message_full_results(self, mock_search_multi, mock_config):
+        with open(tmdb_payload) as f:
+            tmdb_json = json.load(f)
+        mock_search_multi.return_value = tmdb_json
+        reply = await search.handle_message('', self.mock_message())
 
         expected_emojis = search.number_emojis
         expected_result_count = len(expected_emojis)
@@ -64,46 +56,30 @@ class TestSearchCommand(unittest.TestCase):
             self.assertRegex(reply['embed'].description, emoji)
         self.assertEqual(reply['reactions'], expected_emojis)
 
-        radarr_links = re.findall(re.escape(radarr.tmdb_url), reply['embed'].description)
-        sonarr_links = re.findall(re.escape(sonarr.tvdb_url), reply['embed'].description)
-        self.assertEqual(len(radarr_links), expected_result_count / 2, msg="Expected half of the results to be from radarr")
-        self.assertEqual(len(sonarr_links), expected_result_count / 2, msg="Expected half of the results to be from sonarr")
+    @patch('darrcord.command.search.Config')
+    @patch('darrcord.tmdb.search_multi', autospec=True)
+    async def test_handle_message_sonarr_channel(self, mock_search_multi, mock_config):
+        mock_search_multi.return_value = []
+        type(mock_config).SONARR_CHANNELS = PropertyMock(return_value=[ self.test_channel ])
+        reply = await search.handle_message('', self.mock_message())
+        mock_search_multi.assert_called_with('', ['tv'])
 
     @patch('darrcord.command.search.Config')
-    @patch('darrcord.radarr.req_movie_lookup', autospec=True)
-    @patch('darrcord.sonarr.req_series_lookup', autospec=True)
-    def test_handle_message_sonarr_channel(self, mock_req_series_lookup, mock_req_movie_lookup, mock_config):
-        test_channel = 'test_channel'
-        type(mock_config).SONARR_CHANNELS = PropertyMock(return_value=[ test_channel ])
-        mock_req_series_lookup.return_value = { "json": [] }
-        mock_req_movie_lookup.return_value = { "json": [] }
-        reply = search.handle_message('', self.mock_message())
-        self.assertTrue(mock_req_series_lookup.called)
-        self.assertFalse(mock_req_movie_lookup.called)
+    @patch('darrcord.tmdb.search_multi', autospec=True)
+    async def test_handle_message_radarr_channel(self, mock_search_multi, mock_config):
+        mock_search_multi.return_value = []
+        type(mock_config).RADARR_CHANNELS = PropertyMock(return_value=[ self.test_channel ])
+        reply = await search.handle_message('', self.mock_message())
+        mock_search_multi.assert_called_with('', ['movie'])
 
     @patch('darrcord.command.search.Config')
-    @patch('darrcord.radarr.req_movie_lookup', autospec=True)
-    @patch('darrcord.sonarr.req_series_lookup', autospec=True)
-    def test_handle_message_radarr_channel(self, mock_req_series_lookup, mock_req_movie_lookup, mock_config):
-        test_channel = 'test_channel'
-        type(mock_config).RADARR_CHANNELS = PropertyMock(return_value=[ test_channel ])
-        mock_req_series_lookup.return_value = { "json": [] }
-        mock_req_movie_lookup.return_value = { "json": [] }
-        reply = search.handle_message('', self.mock_message())
-        self.assertFalse(mock_req_series_lookup.called)
-        self.assertTrue(mock_req_movie_lookup.called)
-
-    @patch('darrcord.command.search.Config')
-    @patch('darrcord.radarr.req_movie_lookup', autospec=True)
-    @patch('darrcord.sonarr.req_series_lookup', autospec=True)
-    def test_handle_message_radarr_and_sonarr_channel(self, mock_req_series_lookup, mock_req_movie_lookup, mock_config):
+    @patch('darrcord.tmdb.search_multi', autospec=True)
+    async def test_handle_message_radarr_and_sonarr_channel(self, mock_search_multi, mock_config):
+        mock_search_multi.return_value = []
         type(mock_config).SONARR_CHANNELS = PropertyMock(return_value=[ self.test_channel ])
         type(mock_config).RADARR_CHANNELS = PropertyMock(return_value=[ self.test_channel ])
-        mock_req_series_lookup.return_value = { "json": [] }
-        mock_req_movie_lookup.return_value = { "json": [] }
-        reply = search.handle_message('', self.mock_message())
-        self.assertTrue(mock_req_series_lookup.called)
-        self.assertTrue(mock_req_movie_lookup.called)
+        reply = await search.handle_message('', self.mock_message())
+        mock_search_multi.assert_called_with('', ['tv', 'movie'])
 
 
     #### handle_reaction ####
@@ -119,7 +95,7 @@ class TestSearchCommand(unittest.TestCase):
 
     @patch('darrcord.command.search.Config')
     @patch('darrcord.command.request.handle_message', autospec=True)
-    def test_handle_reaction_radarr(self, mock_request_command, mock_config):
+    async def test_handle_reaction_radarr(self, mock_request_command, mock_config):
         mock_reaction = MagicMock()
         mock_user = MagicMock()
         mock_embed = MagicMock()
@@ -127,13 +103,13 @@ class TestSearchCommand(unittest.TestCase):
         mock_embed.description = self.sample_message
         mock_reaction.__str__.return_value = "1️⃣"
         mock_reaction.message.embeds = [ mock_embed ]
-        reply = search.handle_reaction(mock_reaction, mock_user)
-        mock_request_command.assert_called_with("tmdb:11", None)
+        reply = await search.handle_reaction(mock_reaction, mock_user)
+        mock_request_command.assert_called_with("tmdb:11", None, title='Star Wars (1977)')
 
 
     @patch('darrcord.command.search.Config')
     @patch('darrcord.command.request.handle_message', autospec=True)
-    def test_handle_reaction_sonarr(self, mock_request_command, mock_config):
+    async def test_handle_reaction_sonarr(self, mock_request_command, mock_config):
         mock_reaction = MagicMock()
         mock_user = MagicMock()
         mock_embed = MagicMock()
@@ -141,8 +117,8 @@ class TestSearchCommand(unittest.TestCase):
         mock_embed.description = self.sample_message
         mock_reaction.__str__.return_value = "2️⃣"
         mock_reaction.message.embeds = [ mock_embed ]
-        reply = search.handle_reaction(mock_reaction, mock_user)
-        mock_request_command.assert_called_with("tmdb:181812", None)
+        reply = await search.handle_reaction(mock_reaction, mock_user)
+        mock_request_command.assert_called_with("tmdb:181812", None, title='Star Wars: The Rise of Skywalker (2019)')
 
 if __name__ == '__main__':
     unittest.main()
