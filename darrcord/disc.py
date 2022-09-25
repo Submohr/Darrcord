@@ -35,7 +35,7 @@ async def on_reaction_add(reaction, user):
         if user == client.user or not reaction.message.author == client.user:
             return
 
-        logger.debug(f"Received reaction: {reaction} from {user} on {reaction.message.channel}")
+        logger.debug(f"Received reaction: {reaction} from {user} on {reaction.message.channel} with nonce {reaction.message.nonce}")
 
         for cmd in commands:
             if cmd.nonce == reaction.message.nonce:
