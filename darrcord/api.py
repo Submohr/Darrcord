@@ -35,7 +35,7 @@ def req(conn, resource, method="GET", params={}, body={}):
     except ConnectionError as err:
         logger.error(f"Failed to connect to API.  Check endpoint ({conn.ENDPOINT},  {resource}) or API_KEY.  Error message: {err}")
         raise
-    logger.debug(f"Response: {response.text}")
+    logger.debug(f"Response: {response.text} code: {response.status_code}")
     if response is None or response.json() is None:
         logger.exception(f"Failed to connect to API.  Check endpoint ({conn.ENDPOINT},  {resource}) or API_KEY.")
         raise Exception
