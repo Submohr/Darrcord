@@ -6,7 +6,7 @@ from darrcord import radarr
 from darrcord import logger
 from darrcord import tmdb
 
-nonce = 202260
+nonce = '202260'
 
 def request_sonarr_series(series, title="series"):
     id = int(series)

@@ -9,7 +9,7 @@ from darrcord.command import request
 import json
 
 number_emojis = ["1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣"]
-nonce = 926835
+nonce = '926835'
 
 def present_tmdb_movie_choice(json):
     return f"[{json['title']} ({json['year']})]({tmdb.movie_url}{json['id']})"
