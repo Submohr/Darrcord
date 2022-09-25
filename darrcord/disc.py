@@ -35,11 +35,11 @@ async def on_reaction_add(reaction, user):
         if user == client.user or not reaction.message.author == client.user:
             return
 
-        logger.debug(f"Received reaction: {reaction} from {user} on {reaction.message.channel} with nonce {reaction.message.nonce}")
+        logger.debug(f"Received reaction: {reaction} from {user} on {reaction.message.channel} with nonce {repr(reaction.message.nonce)} and nonce type {type(reaction.message.nonce)}")
 
         for cmd in commands:
-            logger.debug(f"Testing for command {cmd} with nonce {repr(cmd.nonce)}: equals = {repr(cmd.nonce) == repr(reaction.message.nonce)}")
-            if repr(cmd.nonce) == repr(reaction.message.nonce):
+            logger.debug(f"Testing for command {cmd} with nonce {cmd.nonce}: equals = {cmd.nonce == reaction.message.nonce}")
+            if cmd.nonce == reaction.message.nonce:
                 logger.debug(f"Running cmd.handle_reaction on cmd: {cmd}")
                 reply = await cmd.handle_reaction(reaction, user)
                 if reply:
