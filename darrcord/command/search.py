@@ -56,6 +56,8 @@ def handle_reaction(reaction, user):
     """ If the user clicks an emoji on one of our search result messages, this triggers the
     request by firing off a fake message to the request command """
 
+    logger.debug(f"Reaction.message.embeds: {reaction.message.embeds}")
+
     if not reaction.message.embeds:
         return
 
