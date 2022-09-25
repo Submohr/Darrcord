@@ -7,7 +7,8 @@ from darrcord import radarr
 from darrcord import logger
 from darrcord.command import request, search
 
-client = discord.Client()
+intents = discord.Intents.default()
+client = discord.Client(intents=intents)
 
 commands = request, search
 
