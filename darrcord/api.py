@@ -3,7 +3,7 @@ from darrcord import logger
 
 
 def req(conn, resource, method="GET", params={}, body={}):
-    logger.debug(f"Sending request to endpoint {conn.ENDPOINT + resource} with params {conn.params}")
+    logger.debug(f"Sending {method} request to endpoint {conn.ENDPOINT + resource} with params {conn.params}")
     try:
         if method == "GET":
             response = requests.get(
